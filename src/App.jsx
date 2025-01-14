@@ -1,21 +1,21 @@
 import React, { useEffect } from 'react';
-import themes from './Theme/Theme';
-import ThemeProvider from './Theme/ThemeProvider';
 import useStore from './Store/Store';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import { Router } from './Routers';
-import { getLocalStorage, settingLocalStorage } from './Services/__authentication';
+import { getLocalStorage, settingLocalStorage, userType } from './Services/__authentication';
 import { jwtDecode } from "jwt-decode";
 import { Toaster } from './Components/Toaster';
+import { useLocation } from 'react-router-dom';
 
 
 const App = () => {
   const theme = useStore((state) => state.theme);
   const login = useStore((state)=> state.login)
-  const currentTheme = themes[theme];
 
   const settingAuthState = useStore((state)=> state.settingAuthState)
+  const location = useLocation()
+
 
   
 
@@ -23,9 +23,7 @@ const App = () => {
   useEffect(()=>{
     const jwtToken = getLocalStorage()
     if(jwtToken){
-      console.log('jwtTokenAvail', jwtToken)
       settingAuthState(true)
-      console.log('***********')
       const decode = jwtDecode(jwtToken)
       for (const key in decode) {
         if (decode.hasOwnProperty(key)) {
@@ -38,13 +36,19 @@ const App = () => {
       settingAuthState(false)
     }
   },[login])
+
+  useEffect(()=>{
+    document.documentElement.setAttribute('data-theme', theme);
+
+  },[theme])
   return (
-    <ThemeProvider>
+    <>
       <Toaster />
-      <div className={`min-h-screen flex flex-col ${currentTheme.background}`}>
+      <div className={`min-h-screen flex flex-col font-poppins bg-fullbg`}>
         <div className='w-full lg:max-w-[1250px] lg:mx-auto px-10 flex flex-col flex-grow'>
           <div className=''>
-            <Navbar />
+           
+              <Navbar />
           </div>
           <div className='flex-grow flex'>
             <div className='w-full'>
@@ -56,7 +60,7 @@ const App = () => {
           </div>
         </div>
       </div>
-    </ThemeProvider>
+    </>
   );
 };
 

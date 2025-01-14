@@ -18,5 +18,4 @@ export const paraRightSelection = [
     {id: 2, name:'30'},
     {id: 3, name:'60'},
     {id: 4, name:'120'},
-    {id: 5, name:<FaTools />},
 ]

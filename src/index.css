@@ -1,3 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+:root {
+    --color-whole-bg: #333437;
+    --color-container-bg: #27292A;
+    --color-main: #1DC100;
+    --color-text-secondar:#000000;
+    --color-text: #fff;
+    --color-hover:#292929;
+    --color-para:#BEBABA;
+    --color-main-secondary:#2CDD0D12;
+    --color-time:#939494;
+    --color-input-bg: #0A0A0A
+}
+
+[data-theme='blue'] {
+    --color-whole-bg: #333437;
+    --color-container-bg: #27292A;
+    --color-main: #00BFFC;
+    --color-text-secondar:#000000;
+    --color-text: #fff;
+    --color-hover:#292929;
+    --color-para:#BEBABA;
+    --color-main-secondary:#2CDD0D12;
+    --color-time:#939494;
+    --color-input-bg: #0A0A0A
+}
+[data-theme='yellow'] {
+    --color-whole-bg: #333437;
+    --color-container-bg: #27292A;
+    --color-main: #E2B900;
+    --color-text-secondar:#000000;
+    --color-text: #fff;
+    --color-hover:#292929;
+    --color-para:#BEBABA;
+    --color-main-secondary:#2CDD0D12;
+    --color-time:#939494;
+    --color-input-bg: #0A0A0A
+}
+[data-theme='pink'] {
+    --color-whole-bg: #333437;
+    --color-container-bg: #27292A;
+    --color-main: #D8428A;
+    --color-text-secondar:#000000;
+    --color-text: #fff;
+    --color-hover:#292929;
+    --color-para:#BEBABA;
+    --color-main-secondary:#2CDD0D12;
+    --color-time:#939494;
+    --color-input-bg: #0A0A0A
+}
+
+/* [data-theme='theme2'] {
+    --color-navbar-bg: #ffedd5;
+    --color-container-bg: #ffe4e6;
+    --color-text: #881337;
+    --color-gradient-bg: linear-gradient(90deg, #4facfe, #00f2fe);
+}
+
+[data-theme='theme3'] {
+    --color-navbar-bg: #1f2937;
+    --color-container-bg: #111827;
+    --color-text: #f3f4f6;
+    --color-gradient-bg: linear-gradient(to right, #e8cbc0, #636fa4);;
+} */
+
+/* Add more themes up to 10 */
+
+
+.custom-calendar-indicator::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    /* This will invert the color of the indicator */
+}

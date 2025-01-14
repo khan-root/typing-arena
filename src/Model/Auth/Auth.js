@@ -17,6 +17,14 @@ const AuthApi = {
             data:data
         })
     },
+    adminLogin:function(data){
+        return authInstance.request({
+            method: 'POST',
+            url:`/api/users/arena/login`,
+            data:data
+        })
+    },
+
     
 }
 

@@ -56,7 +56,7 @@ const Login = () => {
                     <span><IoLogIn /></span>
                     <span>Login</span>
                 </div>
-                <div className='flex items-center gap-2'>
+                {/* <div className='flex items-center gap-2'>
                     <div className='flex flex-1 items-center justify-center gap-2 py-2 bg-[#303235] text-[#d1d0c5] text-[20px] rounded-md'>
 
                         <span className=''>
@@ -69,12 +69,12 @@ const Login = () => {
                             <BsGithub />
                         </span>
                     </div>
-                </div>
-                <div className='flex items-center gap-2'>
+                </div> */}
+                {/* <div className='flex items-center gap-2'>
                     <span className='flex-1 h-1 bg-[#303235]'></span>
                     <span className='flex-[0.1] text-[#d1d0c5] text-[16px]'>or</span>
                     <span className='flex-1 bg-[#303235] h-1'></span>
-                </div>
+                </div> */}
                 
                 <div>
                     <input className='py-2 px-2 w-full bg-[#2c2e31] rounded-md outline-white text-[#d1d0c5] placeholder:text-[#646669]' placeholder='Email' 
@@ -86,6 +86,7 @@ const Login = () => {
                     <input className='py-2 px-2 w-full bg-[#2c2e31] rounded-md outline-white text-[#d1d0c5] placeholder:text-[#646669]' placeholder='Password' 
                         name='password'
                         onChange={handleLoginInputChange}
+                        type='password'
                     />
                 </div>
                 <div className='flex items-center justify-center gap-2 py-2 bg-[#303235] text-[#646669] text-[20px] rounded-md cursor-pointer'

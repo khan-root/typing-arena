@@ -4,6 +4,10 @@ export const getLocalStorage = () => {
    return localStorageItem
     
 };
+export const userType = ()=>{
+  const uType  =   localStorage.getItem('user_type')
+  return uType
+}
 
 export const settingLocalStorage = (key, value) => {
   if (key && value !== undefined) {

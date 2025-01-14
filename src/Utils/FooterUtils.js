@@ -5,6 +5,8 @@ const useFooterUtils = ()=>{
 
 
     const theme = useStore((state)=> state.theme)
+    const setTheme = useStore((state)=> state.setTheme)
+    const getThemeFromLocal = useStore((state)=> state.getThemeFromLocal)
     
     const LeftSideFooter=[
         {id:1, title: 'Contact', icon:<FaEnvelope />},
@@ -20,11 +22,25 @@ const useFooterUtils = ()=>{
 
     const RightSideFooter=[
         {id:1, title: theme, icon:<FaPalette />},
-        {id:2, title: 'version', icon:<FaCodeBranch />},
     ]
 
 
-    return { LeftSideFooter, RightSideFooter, theme }
+
+    const customThemeData = [
+        {id:1, title:'default'},
+        {id:2, title:'blue'},
+        {id:3, title:'yellow'},
+        {id:4, title:'pink'},
+    ]
+
+
+    const handleChnageTheme =(data)=>{
+        setTheme(data.title)
+        localStorage.setItem('theme', data.title);
+    }
+
+
+    return { LeftSideFooter, RightSideFooter, theme, customThemeData, handleChnageTheme,getThemeFromLocal}
 }
 
 

@@ -51,7 +51,8 @@ const useLogin = ()=>{
             }
 
         } catch (error) {
-            
+            const error_description = error.response.data.ERROR_DESCRIPTION
+            showToast(error_description, 'error')
         }
     }
 
@@ -71,7 +72,7 @@ const useLogin = ()=>{
     }
 
     const handleUserLogin = async()=>{
-         try {
+        try {
             
             const response = await AuthApi.login(loginValue)
             console.log('response', response)
@@ -82,8 +83,6 @@ const useLogin = ()=>{
                 localStorage.setItem('authToken', token)
                 settingAuthState(true)
                 navigate('/profile')
-
-
             }
 
         } catch (error) {
